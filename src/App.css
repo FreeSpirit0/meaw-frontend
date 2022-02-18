@@ -33,3 +33,38 @@ body {
 .sign-in-info * {
   margin: .5rem 0rem;
 }
+
+.sign-in-info input {
+  border-radius: .375rem; 
+  border: none;
+  outline: 1px solid #4BA3FC;
+}
+
+.sign-in-info button {
+  border-radius: .375rem; 
+  border: none;
+  outline-width: 1px;
+  background-color: #4BA3FC;
+  color: white;
+  margin-top: 2rem;
+  cursor: pointer;
+  padding: .5rem 0rem;
+}
+
+.map-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.map-buttons button {
+  border-radius: .375rem; 
+  border: none;
+  outline-width: 1px;
+  background-color: #4BA3FC;
+  color: white;
+  cursor: pointer;
+  padding: .5rem .5rem;
+}

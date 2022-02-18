@@ -13,20 +13,22 @@ const Home = () => {
       <Map
         googleMapURL="http://maps.googleapis.com/maps/api/js?key=AIzaSyBKVx_03i5sma7hq1Mzrgi21E7Yi03VoDs"
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `400px` }} />}
+        containerElement={<div style={{ height: `40rem` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         onMapClick={isAddingMarker ? onMapClick : (e) => {}}
         markers={markers}
       />
-      <button
-        value={isAddingMarker}
-        onClick={() => setIsAddingMarker(!isAddingMarker)}
-      >
-        {isAddingMarker ? 'Stop adding' : 'Add Marker'}
-      </button>
-			<button>
-				Delete Marker
-			</button>
+      <div className="map-buttons">
+        <button
+          value={isAddingMarker}
+          onClick={() => setIsAddingMarker(!isAddingMarker)}
+        >
+          {isAddingMarker ? 'Stop adding' : 'Add Marker'}
+        </button>
+        <button>
+          Delete Marker
+        </button>
+      </div>
     </div>
   );
 };
