@@ -16,16 +16,14 @@ body {
   padding: 0.5rem;
 }
 
-.navbar-container h1 {
-  cursor: pointer;
-}
-
 .sign-in-container {
   display: flex;
   flex-grow: 1;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 2rem;
+  margin-left: 5rem;
+  justify-content: center;
 }
 
 .sign-in-info {
@@ -36,7 +34,7 @@ body {
   padding: 0 2rem;
   border: 2px solid rgb(78, 77, 77);
   border-radius: 10%;
-  box-shadow: 5px 3px grey;
+  box-shadow: 5px 3px rgb(226, 223, 223);
 }
 
 .sign-in-info * {
@@ -61,6 +59,9 @@ body {
   cursor: pointer;
   padding: 0.5rem 0rem;
   margin-bottom: 2rem;
+}
+.sign-in-info button:hover {
+  background-color: #7cb6f0;
 }
 
 .map-buttons {
@@ -100,4 +101,61 @@ body {
 }
 .icons {
   margin-left: 0.5rem;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.sign-in-info button:hover {
+  background-color: #7cb6f0;
+}
+
+#gato {
+  background: url("https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg");
+  height: 297px;
+  width: 507.5px;
+
+  z-index: 10;
+  -webkit-animation: sprite-animation 1.2s steps(16, end) infinite;
+  -moz-animation: sprite-animation 1.2s steps(16, end) infinite;
+  -ms-animation: sprite-animation 1.2s steps(16, end) infinite;
+  animation: sprite-animation 1.2s steps(16, end) infinite;
+}
+
+@-webkit-keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -8120px 0;
+  }
+}
+
+@-ms-keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -8120px 0;
+  }
+}
+
+@-moz-keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -8120px 0;
+  }
+}
+
+@keyframes sprite-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -8120px 0;
+  }
+}
+.catsign {
+  width: 20rem;
 }

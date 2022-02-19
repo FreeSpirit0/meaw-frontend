@@ -24,13 +24,15 @@ const SignIn = () => {
 
   return (
     <div className="sign-in-container">
-      <h1>Sign in</h1>
+      {/* <img src={cat} className="catsign" /> /} */}
+      <div id="gato"></div>
       <div className="sign-in-info">
+        <h1>Sign in</h1>
         <p className="email-title">Email</p>
         <form className="email-form">
           <FaEnvelope className="icons" />
           <input
-            placeholder="email"
+            placeholder="Email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           ></input>
@@ -39,13 +41,12 @@ const SignIn = () => {
         <form className="pass-form">
           <FaLock className="icons" />
           <input
-            placeholder="password"
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </form>
-        {/* TODO: Add onClick to submit {username, password} to Backend. */}
         <button onClick={onClickSubmit}>Sign in</button>
       </div>
     </div>

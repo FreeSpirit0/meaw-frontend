@@ -14,7 +14,7 @@ const Navbar = () => {
           <button onClick={logout}>Logout</button>
         </p>
       ) : (
-        <Link to="/signin">ลงชื่อเข้าใช้งาน</Link>
+        <Link to="/signin">เข้าสู่ระบบ</Link>
       )}
     </div>
   );
