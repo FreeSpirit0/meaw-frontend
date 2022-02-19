@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
-import { useAuth } from '../contexts/AuthProvider';
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthProvider'
 import { login } from '../services/auth'
 import { FaEnvelope, FaLock } from 'react-icons/fa'
 
@@ -14,7 +14,7 @@ const SignIn = () => {
     const formData = new FormData()
     formData.append('username', username)
     formData.append('password', password)
-    await login(formData).then(data=> {
+    await login(formData).then((data) => {
       if (data) {
         setUserInfo({ username: username })
         setToken(data.access_token)

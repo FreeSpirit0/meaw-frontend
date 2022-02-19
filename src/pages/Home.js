@@ -5,15 +5,21 @@ import { DataGrid } from '@mui/x-data-grid';
 import { HiMenu } from 'react-icons/hi'
 
 const Home = () => {
-  const [locations, setLocations] = useState([]);
-  const [isAddingMarker, setIsAddingMarker] = useState(false);
-  const [inputLocation, setInputLocation] = useState();
-  const [inputLat, setInputLat] = useState();
-  const [inputLng, setInputLng] = useState();
-  const onMapClick = (e) => { setInputLat(e.latLng.lat); setInputLng(e.latLng.lng)};
+  const [locations, setLocations] = useState([])
+  const [isAddingMarker, setIsAddingMarker] = useState(false)
+  const [inputLocation, setInputLocation] = useState()
+  const [inputLat, setInputLat] = useState()
+  const [inputLng, setInputLng] = useState()
+  const onMapClick = (e) => {
+    setInputLat(e.latLng.lat)
+    setInputLng(e.latLng.lng)
+  }
   const handleSubmit = async (e) => {
-    await addLocation({ place: inputLocation, latLng: { lat: inputLat, lng: inputLng}}, window.localStorage.getItem("token"))
-    console.log("Success")
+    await addLocation(
+      { place: inputLocation, latLng: { lat: inputLat, lng: inputLng } },
+      window.localStorage.getItem('token')
+    )
+    console.log('Success')
   }
   const [viewingSideBar, setViewingSideBar] = useState(false);
   const columns = [
@@ -22,9 +28,9 @@ const Home = () => {
 
   useEffect(() => {
     getLocations().then((data) => {
-      setLocations(data);
-    });
-  }, []);
+      setLocations(data)
+    })
+  }, [])
 
   return (
     <div>
@@ -53,49 +59,46 @@ const Home = () => {
       </div>
       <div className="map-buttons">
         {isAddingMarker ? (
-          ""
+          ''
         ) : (
           <button
+            className="btn-add-marker"
             value={isAddingMarker}
             onClick={() => setIsAddingMarker(!isAddingMarker)}
           >
             Add Marker
           </button>
         )}
-        {isAddingMarker ? "" : <button>Delete Marker</button>}
+        {isAddingMarker ? (
+          ''
+        ) : (
+          <button className="btn-delete-marker">Delete Marker</button>
+        )}
         {isAddingMarker ? (
           <form onSubmit={handleSubmit}>
             <label>
-              Location Name:{" "}
+              Location Name:{' '}
               <input
                 type="text"
                 value={inputLocation}
-                onChange={e => setInputLocation(e.target.value)}
+                onChange={(e) => setInputLocation(e.target.value)}
               ></input>
             </label>
             <label>
-              Latitude:{" "}
-              <input
-                type="text"
-                value={inputLat}
-              ></input>
+              Latitude: <input type="text" value={inputLat}></input>
             </label>
             <label>
-              Longtitude:{" "}
-              <input
-                type="text"
-                value={inputLng}
-              ></input>
+              Longtitude: <input type="text" value={inputLng}></input>
             </label>
             <button type="submit">Add marker</button>
             <button onClick={(e) => setIsAddingMarker(false)}>Cancel</button>
           </form>
         ) : (
-          ""
+          ''
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
