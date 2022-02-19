@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthProvider'
-
+import { BiLogOut, BiLogIn } from 'react-icons/bi'
+import { BsFillPersonFill } from 'react-icons/bs'
 const Navbar = () => {
   const { logout } = useAuth()
   return (
@@ -11,9 +12,15 @@ const Navbar = () => {
         <h1>แมวเตือน</h1>
       </Link>
       {window.localStorage.getItem('user') ? (
-        <p>
+        <p className="navbar-icon">
+          <BsFillPersonFill />
+          &nbsp; User:&nbsp;
           {JSON.parse(window.localStorage.getItem('user')).username}
-          <button onClick={logout}>Logout</button>
+          &nbsp;&nbsp;
+          {/* <BiLogOut className="logout-icon" /> */}
+          <button onClick={logout} className="btn-logout">
+            Logout
+          </button>
         </p>
       ) : (
         <Link
