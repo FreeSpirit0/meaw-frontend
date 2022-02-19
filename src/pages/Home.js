@@ -65,6 +65,7 @@ const Home = () => {
               ></input>
             </label>
             <button type="submit">Add marker</button>
+            <button onClick={(e) => setIsAddingMarker(false)}>Cancel</button>
           </form>
         ) : (
           ""
