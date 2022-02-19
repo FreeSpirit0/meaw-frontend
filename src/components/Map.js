@@ -12,7 +12,7 @@ const Map = withScriptjs(
     <GoogleMap defaultZoom={8} defaultCenter={{ lat: 13.844691, lng: 100.567988 }} onClick={props.onMapClick}>
       {props.markers.map(
         marker => {
-        return <Marker position={marker} />
+        return <Marker key={marker.place} position={marker} />
       }
       )}
     </GoogleMap>

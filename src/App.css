@@ -59,9 +59,7 @@ body {
   cursor: pointer;
   padding: 0.5rem 0rem;
   margin-bottom: 2rem;
-}
-.sign-in-info button:hover {
-  background-color: #7cb6f0;
+  width: 100%;
 }
 
 .map-buttons {
@@ -107,7 +105,7 @@ input:focus::placeholder {
 }
 .sign-in-info button:hover {
   background-color: #7cb6f0;
-}
+} 
 
 #gato {
   background: url("https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg");
@@ -158,4 +156,9 @@ input:focus::placeholder {
 }
 .catsign {
   width: 20rem;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: row;
 }
