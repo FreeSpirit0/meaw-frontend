@@ -3,8 +3,10 @@ import Map from "../components/Map";
 import { addLocation, getLocations } from "../services/meaw";
 import { DataGrid } from '@mui/x-data-grid';
 import { HiMenu } from 'react-icons/hi'
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate()
   const [locations, setLocations] = useState([])
   const [isAddingMarker, setIsAddingMarker] = useState(false)
   const [inputLocation, setInputLocation] = useState()
@@ -54,7 +56,8 @@ const Home = () => {
           containerElement={<div style={viewingSideBar ? { height: `40rem`, width: `70%` } : { height: `40rem`, width: `95%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
           onMapClick={isAddingMarker ? onMapClick : (e) => {}}
-          markers={locations.map((location) => location.latLng)}
+          markers={locations}
+          navigate={navigate}
         />
       </div>
       <div className="map-buttons">
