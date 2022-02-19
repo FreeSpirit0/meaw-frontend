@@ -16,6 +16,10 @@ body {
   padding: 0.5rem;
 }
 
+.navbar-container h1 {
+  cursor: pointer;
+}
+
 .sign-in-container {
   display: flex;
   flex-grow: 1;
