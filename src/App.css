@@ -110,7 +110,7 @@ input:focus::placeholder {
 }
 
 #gato {
-  background: url("https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg");
+  background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg');
   height: 297px;
   width: 507.5px;
 
@@ -158,4 +158,22 @@ input:focus::placeholder {
 }
 .catsign {
   width: 20rem;
+}
+a:hover {
+  color: #7cb6f0;
+}
+a {
+  color: black;
+}
+.btn-add-marker:hover,
+.btn-delete-marker:hover {
+  background-color: #7cb6f0;
+}
+
+.detail-page {
+  margin-top: 2rem;
+}
+.place-name {
+  margin-bottom: 1.6rem;
+  margin-left: 2rem;
 }
