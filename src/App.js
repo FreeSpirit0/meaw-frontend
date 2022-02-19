@@ -4,17 +4,20 @@ import Home from "./pages/Home";
 import "./App.css";
 import SignIn from "./pages/SignIn";
 import Detail from "./pages/Detail";
+import AuthProvider from "./contexts/AuthProvider";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/detail/:place" element={<Detail />} />
-        <Route path="*" element={<Navigate to="/home" />} />
-      </Routes>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/detail/:place" element={<Detail />} />
+          <Route path="*" element={<Navigate to="/home" />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }

@@ -1,9 +1,25 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
+import { useAuth } from '../contexts/AuthProvider';
+import { login } from '../services/auth'
 
 const SignIn = () => {
+  const navigate = useNavigate()
+  const { setUserInfo, setToken } = useAuth() 
 	const [username, setUsername] = useState()
 	const [password, setPassword] = useState()
-	const onClickSubmit = (e) => {console.log("Authenticating!!")}
+	const onClickSubmit = async (e) => {
+    const formData = new FormData()
+    formData.append('username', username)
+    formData.append('password', password)
+    await login(formData).then(data=> {
+      if (data) {
+        setUserInfo({ username: username })
+        setToken(data.access_token)
+        navigate('/home')
+      }
+    })
+  }
 
   return (
     <div className="sign-in-container">
