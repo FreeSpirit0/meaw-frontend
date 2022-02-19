@@ -25,6 +25,7 @@ body {
   margin-left: 5rem;
   justify-content: center;
 }
+
 .sign-in-info {
   display: flex;
   flex-direction: column;
