@@ -21,13 +21,18 @@ body {
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
+  margin: 2rem;
 }
 
 .sign-in-info {
   display: flex;
   flex-direction: column;
-  width: 15rem;
-  margin: 2rem 0rem;
+  width: 25rem;
+  margin: 4rem 2rem;
+  padding: 0 2rem;
+  border: 2px solid rgb(78, 77, 77);
+  border-radius: 10%;
+  box-shadow: 5px 3px grey;
 }
 
 .sign-in-info * {
@@ -51,6 +56,7 @@ body {
   margin-top: 2rem;
   cursor: pointer;
   padding: 0.5rem 0rem;
+  margin-bottom: 2rem;
 }
 
 .map-buttons {
@@ -72,12 +78,22 @@ body {
 }
 
 .email-form {
-  border: 2px solid #4ba3fc;
+  border: 2px solid #92c2f3;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  background-color: white;
+}
+.pass-form {
+  border: 2px solid #92c2f3;
+  border-radius: 5px;
   display: flex;
   text-align: center;
 }
-.pass-form {
-  border: 2px solid #4ba3fc;
-  display: flex;
-  text-align: center;
+
+.email-title {
+  margin-top: 1.5rem;
+}
+.icons {
+  margin-left: 0.5rem;
 }
