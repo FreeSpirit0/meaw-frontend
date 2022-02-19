@@ -8,7 +8,7 @@ const Detail = () => {
 	const { place } = useParams()
 	useEffect(() => {
 		getDeviceRecords(place).then(
-			data => {setRecords([data])
+			data => {setRecords(data)
 			}
 		)
 	}, [place])
