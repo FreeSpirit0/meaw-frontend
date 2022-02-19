@@ -4,9 +4,11 @@ import { Link } from "react-router-dom"
 const Navbar = () => {
   return (
     <div className="navbar-container">
-      <h2>แมวเตือน</h2>
+      <h1>แมวเตือน</h1>
       {/* TODO: Get user authenticated state and display accordingly */}
-      <Link to="/signin">ลงชื่อเข้าใช้งาน</Link>
+      <Link to="/signin" style={{ textDecoration: "none" }}>
+        เข้าสู่ระบบ
+      </Link>
     </div>
   )
 }
