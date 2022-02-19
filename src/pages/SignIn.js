@@ -24,20 +24,22 @@ const SignIn = () => {
 
   return (
     <div className="sign-in-container">
-      <h2>Sign in</h2>
+      <h1>Sign in</h1>
       <div className="sign-in-info">
-        <p>Email</p>
+        <p className="email-title">Email</p>
         <form className="email-form">
-          <FaEnvelope />
+          <FaEnvelope className="icons" />
           <input
+            placeholder="email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           ></input>
         </form>
         <p>Password</p>
         <form className="pass-form">
-          <FaLock />
+          <FaLock className="icons" />
           <input
+            placeholder="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
