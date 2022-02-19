@@ -10,6 +10,13 @@ export async function getLocations() {
     return res.data
 }
 
-export async function addLocation() {
-    
+export async function addLocation(location, token) {
+    const res = await axios.post('https://ecourse.cpe.ku.ac.th/exceed02/api/device/register', location, 
+    {
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    })
+    return res.data
 }

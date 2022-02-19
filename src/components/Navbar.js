@@ -8,10 +8,9 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <h1 onClick={() => navigate("/home")}>แมวเตือน</h1>
-      {/* TODO: Get user authenticated state and display accordingly */}
       {window.localStorage.getItem("user") ? (
         <p>
-          {window.localStorage.getItem("user").username}
+          {JSON.parse(window.localStorage.getItem("user")).username}
           <button onClick={logout}>Logout</button>
         </p>
       ) : (
