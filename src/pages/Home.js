@@ -4,6 +4,7 @@ import { addLocation, getLocations } from "../services/meaw";
 import { DataGrid } from '@mui/x-data-grid';
 import { HiMenu } from 'react-icons/hi'
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"
 
 const Home = () => {
   const navigate = useNavigate()
@@ -37,7 +38,7 @@ const Home = () => {
   return (
     <div>
       <div className="map-container">
-        <div style={viewingSideBar ? {height: '40rem', width: '25%'} : {height: '40rem', width: '0%'}}>
+        <motion.div animate={viewingSideBar ? {width: 400} : {width:0}} style={viewingSideBar ? {height: '40rem', width: '25%'} : {height: '40rem', width: '0%'}}>
           <DataGrid
           rows={locations}
           getRowId={(row) => row.place}
@@ -46,7 +47,7 @@ const Home = () => {
           rowsPerPageOptions={[10]}
           checkboxSelection
         />
-        </div>
+        </motion.div>
         <div style={{height: '40rem', width: '5%', display: 'flex', justifyContent: 'center'}}>
           <HiMenu style={{ fontSize: '3rem'}} onClick={(e) => setViewingSideBar(!viewingSideBar)}></HiMenu>
         </div>
