@@ -9,7 +9,6 @@ const Home = () => {
   const [inputLng, setInputLng] = useState();
   const onMapClick = (e) => { setInputLat(e.latLng.lat); setInputLng(e.latLng.lng)};
   const handleSubmit = async (e) => {
-    e.preventDefault()
     await addLocation({ place: inputLocation, latLng: { lat: inputLat, lng: inputLng}}, window.localStorage.getItem("token"))
     console.log("Success")
   }
@@ -22,7 +21,7 @@ const Home = () => {
   return (
     <div>
       <Map
-        googleMapURL="https://maps.googleapis.com/maps/api/js?key="
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiPF56qJj8x96fmWpwR-GtFSPuTzDNufA"
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `40rem` }} />}
         mapElement={<div style={{ height: `100%` }} />}
@@ -40,7 +39,7 @@ const Home = () => {
             Add Marker
           </button>
         )}
-        <button>Delete Marker</button>
+        {isAddingMarker ? "" : <button>Delete Marker</button>}
         {isAddingMarker ? (
           <form onSubmit={handleSubmit}>
             <label>
