@@ -5,6 +5,7 @@ import { BiLogOut, BiLogIn } from 'react-icons/bi'
 import { BsFillPersonFill } from 'react-icons/bs'
 const Navbar = () => {
   const { logout } = useAuth()
+  
   return (
     <div className="navbar-container">
       <Link to="/home" style={{ textDecoration: 'none' }}>

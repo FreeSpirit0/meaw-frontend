@@ -203,3 +203,33 @@ a {
   display: flex;
   align-items: center;
 }
+
+.top-box {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between
+}
+
+.top-box #speed {
+  margin-right: .5rem;
+}
+
+.speed-limit {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: baseline;
+}
+
+#menu {
+  cursor: pointer;
+}
+
+#menu:hover {
+  border: 2px solid #92c2f3;
+}
+
+.new-location * {
+  margin: 0rem .5rem;
+}
